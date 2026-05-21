@@ -1,0 +1,59 @@
+services:
+  naming-server:
+    image: competitions/naming-server:0.1
+    ports:
+      - "8761:8761"
+    networks:
+      - rzk-network
+
+  event-service:
+    image: competitions/event-service:0.1
+    ports:
+      - "8002:8002"
+    depends_on:
+      - naming-server
+    networks:
+      - rzk-network
+
+  korisnik-service:
+    image: competitions/korisnik-service:0.1
+    ports:
+      - "8001:8001"
+    depends_on:
+      - naming-server
+    networks:
+      - rzk-network
+
+  prijava-service:
+    image: competitions/prijava-service:0.1
+    ports:
+      - "8003:8003"
+    depends_on:
+      - naming-server
+    networks:
+      - rzk-network
+
+  kotizacija-service:
+    image: competitions/kotizacija-service:0.1
+    ports:
+      - "8004:8004"
+    depends_on:
+      - naming-server
+    networks:
+      - rzk-network
+
+  api-gateway:
+    image: competitions/api-gateway:0.1
+    ports:
+      - "8765:8765"
+    depends_on:
+      - naming-server
+      - korisnik-service
+      - prijava-service
+      - event-service
+      - kotizacija-service
+    networks:
+      - rzk-network
+
+networks:
+  rzk-network:

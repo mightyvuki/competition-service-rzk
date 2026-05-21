@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpaBuddyIdeaProjectConfig" newRepositoryParent="org.springframework.data.jpa.repository.JpaRepository">
+    <option name="reLastEntityCreationPackage" value="kotizacija-service/src/main/java/com/competitions/kotizacija_service/model" />
+    <option name="reverseEngineeringLastDbConnectionId" value="9d4e64f8-997e-43c1-8f9a-2543a83d343c" />
+  </component>
+  <component name="JpaPluginProjectSettings" reExcludeTablePrefixes="" reExcludeColumnPrefixes="" reExcludeTableSuffixes="" reExcludeColumnSuffixes="">
+    <option name="reUseLazyOnToOneAssociations" value="false" />
+  </component>
+</project>
